@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
@@ -49,23 +50,26 @@ public class App {
             String urlImagem = filme.get("image");
             String titulo = filme.get("title");
             float rating = Float.parseFloat(filme.get("imDbRating"));
+            try {
+                if (urlImagem.contains("@")) {
+                    //substring
+                    String subUrlImg = urlImagem.substring(0, urlImagem.lastIndexOf("@") + 1);
+                    System.out.println(subUrlImg + ".jpg");
 
-            if(urlImagem.contains("@")) {
-                //substring
-                String subUrlImg = urlImagem.substring(0, urlImagem.lastIndexOf("@") + 1);
-                System.out.println(subUrlImg + ".jpg");
+                    InputStream inputStream = new URL(subUrlImg).openStream();
+                    String nomeArquivo = titulo + ".png";
 
-                InputStream inputStream = new URL(subUrlImg).openStream();
-                String nomeArquivo = titulo + ".png";
-
-                GeradorDeStickers gerador = new GeradorDeStickers();
-                gerador.create(inputStream, nomeArquivo, rating);
-            }else{
-                InputStream inputStream = new URL(urlImagem).openStream();
-                System.out.println(urlImagem);
-                String nomeArquivo = titulo + ".png";
-                GeradorDeStickers gerador = new GeradorDeStickers();
-                gerador.create(inputStream, nomeArquivo, rating);
+                    GeradorDeStickers gerador = new GeradorDeStickers();
+                    gerador.create(inputStream, nomeArquivo, rating);
+                } else {
+                    InputStream inputStream = new URL(urlImagem).openStream();
+                    System.out.println(urlImagem);
+                    String nomeArquivo = titulo + ".png";
+                    GeradorDeStickers gerador = new GeradorDeStickers();
+                    gerador.create(inputStream, nomeArquivo, rating);
+                }
+            }catch (FileNotFoundException e){
+                System.out.println("Imagem não encontrada ou link danificado");
             }
         }
     }
