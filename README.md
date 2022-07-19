@@ -26,3 +26,6 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 
 ![Resultado da Aula 02](https://github.com/DharanCosta/ImersaoJava_Alura/blob/main/Assets/SharedScreenshot.jpg
 )
+
+-Agora com borda no texto.</br>
+![Resultado da Aula 02](https://user-images.githubusercontent.com/41304141/179857515-a16a9661-2a94-4d82-a559-eccdfcba24fb.jpg)
