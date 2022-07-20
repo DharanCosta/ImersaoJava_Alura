@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class GeradorDeStickers {
 
-    public void create(InputStream inputStream, String nomeArquivo, Float rating) throws Exception{
+    public void create(InputStream inputStream, String nomeArquivo, Float rating, String date) throws Exception{
 
         // Leitura da imagem
 
@@ -22,8 +22,11 @@ public class GeradorDeStickers {
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         // Padronizar o tamanho
-        imagemOriginal= resizeImage(imagemOriginal, 750,1200);
-
+        if(imagemOriginal.getWidth()<imagemOriginal.getHeight()) {
+            imagemOriginal = resizeImage(imagemOriginal, 750, 1200);
+        }else{
+            imagemOriginal = resizeImage(imagemOriginal, 1200, 750);
+        }
         // Cria nova imagem em memória com transparência e com tamanho novo
 
         int width = imagemOriginal.getWidth();
@@ -37,29 +40,22 @@ public class GeradorDeStickers {
         Graphics2D graphics = (Graphics2D)novaImagem.getGraphics();
         graphics.drawImage(imagemOriginal,0,0, null);
 
-
         // Configurar a fonte
         Font fonte = new Font("Impact", Font.ITALIC, 86);
         Font shadow = new Font("Impact", Font.ITALIC, 92);
 
-
         // Escrever uma frase na nova imagem
-
-        if(rating>9) {
-//            graphics.setFont(shadow);
-//            graphics.setColor(Color.BLACK);
-//            graphics.drawString("NOTA: "+rating, 60, newHeight - 94);
+        if(rating.equals(0F)){
             graphics.setFont(fonte);
-            graphics.setColor(Color.GREEN.darker());
+            graphics.setColor(Color.WHITE);
             graphics.setFont(fonte);
-            graphics.drawString("NOTA: "+rating, 70, newHeight - 100);
-
-            BufferedImage aproved = ImageIO.read(new File("Assets/approved300.png"));
-//             aproved.getScaledInstance(600, (int) (388/ratio), Image.SCALE_SMOOTH);
-            graphics.drawImage(aproved, width-300,newHeight-300, null);
-
+            graphics.drawString("DATA: "+date, 70, newHeight - 100);
+            //Adiciona um segundo Sticker - APROVADO
+            BufferedImage nasa = ImageIO.read(new File("Assets/nasa300.png"));
+            graphics.drawImage(nasa, width-300,newHeight-300, null);
+            //Contorno na fonte
             FontRenderContext fontRenderContext = graphics.getFontRenderContext();
-            var textLayout = new TextLayout("NOTA: "+rating, fonte, fontRenderContext);
+            var textLayout = new TextLayout("DATA: "+date, fonte, fontRenderContext);
 
             Shape outline = textLayout.getOutline(null);
             AffineTransform transform = graphics.getTransform();
@@ -69,35 +65,59 @@ public class GeradorDeStickers {
             var outlineStroke = new BasicStroke(60 * 0.054166f);
             graphics.setStroke(outlineStroke);
 
-            graphics.setColor(Color.BLACK);
+            graphics.setColor(Color.BLUE.darker().darker());
             graphics.draw(outline);
             graphics.setClip(outline);
-
         }else{
-            //Texto
-            graphics.setFont(fonte);
-            graphics.setColor(Color.RED.darker());
-            graphics.drawString("NOTA: "+rating, 70, newHeight - 100);
-            //Sticker
-            BufferedImage aproved = ImageIO.read(new File("Assets/failed300.png"));
+            if(rating>9) {
+                graphics.setFont(fonte);
+                graphics.setColor(Color.GREEN.darker());
+                graphics.setFont(fonte);
+                graphics.drawString("NOTA: "+rating, 70, newHeight - 100);
+                //Adiciona um segundo Sticker - APROVADO
+                BufferedImage aproved = ImageIO.read(new File("Assets/approved300.png"));
+                graphics.drawImage(aproved, width-300,newHeight-300, null);
+                //Contorno na fonte
+                FontRenderContext fontRenderContext = graphics.getFontRenderContext();
+                var textLayout = new TextLayout("NOTA: "+rating, fonte, fontRenderContext);
+
+                Shape outline = textLayout.getOutline(null);
+                AffineTransform transform = graphics.getTransform();
+                transform.translate(70, newHeight-100);
+                graphics.setTransform(transform);
+
+                var outlineStroke = new BasicStroke(60 * 0.054166f);
+                graphics.setStroke(outlineStroke);
+
+                graphics.setColor(Color.BLACK);
+                graphics.draw(outline);
+                graphics.setClip(outline);
+            }else{
+                //Texto
+                graphics.setFont(fonte);
+                graphics.setColor(Color.RED.darker());
+                graphics.drawString("NOTA: "+rating, 70, newHeight - 100);
+                //Sticker
+                BufferedImage aproved = ImageIO.read(new File("Assets/failed300.png"));
 //             aproved.getScaledInstance(600, (int) (388/ratio), Image.SCALE_SMOOTH);
-            graphics.drawImage(aproved, width-300,newHeight-300, null);
-            //Borda
-            FontRenderContext fontRenderContext = graphics.getFontRenderContext();
-            var textLayout = new TextLayout("NOTA: "+rating, fonte, fontRenderContext);
+                graphics.drawImage(aproved, width-300,newHeight-300, null);
+                //Borda
+                FontRenderContext fontRenderContext = graphics.getFontRenderContext();
+                var textLayout = new TextLayout("NOTA: "+rating, fonte, fontRenderContext);
 
-            Shape outline = textLayout.getOutline(null);
-            AffineTransform transform = graphics.getTransform();
-            transform.translate(70, newHeight-100);
-            graphics.setTransform(transform);
+                Shape outline = textLayout.getOutline(null);
+                AffineTransform transform = graphics.getTransform();
+                transform.translate(70, newHeight-100);
+                graphics.setTransform(transform);
 
-            var outlineStroke = new BasicStroke(60 * 0.054166f);
-            graphics.setStroke(outlineStroke);
-            graphics.setColor(Color.BLACK);
-            graphics.draw(outline);
-            graphics.setClip(outline);
+                var outlineStroke = new BasicStroke(60 * 0.054166f);
+                graphics.setStroke(outlineStroke);
+                graphics.setColor(Color.BLACK);
+                graphics.draw(outline);
+                graphics.setClip(outline);
+            }
+
         }
-
         // Escrever a nova imagem em um arquivo
         File sticker = new File("output/"+nomeArquivo);
         if(sticker.mkdir())
