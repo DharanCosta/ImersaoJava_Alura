@@ -1,6 +1,6 @@
 <h1 align="center">Imersão Java - Alura</h1>
 
-<h3> Descrição do projeto</h3>
+<h3> Descrição do projeto </h3>
 Nesse projeto estamos consumindo uma API e tranformaremos os dados.</br>
 
 -`Funcionalidade 1`: Organizar e mostrar os dados da API consumida;</br>
@@ -39,8 +39,14 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 -Adicionei um Enum para gerenciar as URLs dos APIs.</br>
 ![Aula03Enunjpg](https://user-images.githubusercontent.com/41304141/180104008-70686282-3d55-4f8b-b7f1-2726893e18f9.jpg)
 
-<h2 text-align="center">Como ficaram os sticker no Whatsapp</h2>
-![SharedScreenshot](https://user-images.githubusercontent.com/41304141/180104378-97ac80dd-4f3d-4356-bdcf-d9eb41d6c158.jpg)
+<h2 align="center">Exemplo dos sticker no Whatsapp</h2>
+
+![StickerWhatsappExample2](https://user-images.githubusercontent.com/41304141/180104893-7dbd4fc8-a647-4ddb-b51e-0c9b4259e40f.jpg)
+
+![StickerWhatsappExample](https://user-images.githubusercontent.com/41304141/180104578-0266c8c3-01cd-452d-9ce3-cfc483f05e92.jpg)
+
+
+
 
 
 
