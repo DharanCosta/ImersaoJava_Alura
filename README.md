@@ -29,3 +29,18 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 
 -Agora com borda no texto.</br>
 ![Resultado da Aula 02](https://user-images.githubusercontent.com/41304141/179857515-a16a9661-2a94-4d82-a559-eccdfcba24fb.jpg)
+
+## Aula 03
+-Começei um processo de refatoração do código para facilitar o recebimento novas APIs, dessa maneira também acessei a API da Nasa que mostra as fotos do dia</br>
+-Criei a classe ClienteHttp para separa a gestão das urls das APIs.</br>
+-Criei o extrator de conteúdos para receber o JSON das APIs e fazer o tratamento específico para extrair os dados.</br>
+![Aula03jpg](https://user-images.githubusercontent.com/41304141/180103992-73145793-5212-4323-8726-1e7facc67507.jpg)
+-Criei também uma classe Record para padronizar os conteúdos.
+-Adicionei um Enum para gerenciar as URLs dos APIs.</br>
+![Aula03Enunjpg](https://user-images.githubusercontent.com/41304141/180104008-70686282-3d55-4f8b-b7f1-2726893e18f9.jpg)
+
+<h2 text-align="center">Como ficaram os sticker no Whatsapp</h2>
+![SharedScreenshot](https://user-images.githubusercontent.com/41304141/180104378-97ac80dd-4f3d-4356-bdcf-d9eb41d6c158.jpg)
+
+
+
