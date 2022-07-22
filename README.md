@@ -5,7 +5,7 @@
 
 <h3> Descrição do projeto </h3>
 
-O projeto consiste em consumir diferente APIs e exrtrair os dados relevantes para criar stickers, durante o processo de desenvolvivemento foram feitas refatorações no código afim de desacomplar funções e facilitar alterações para consumo de diferentes APIs</br>
+O projeto consiste em consumir APIs e exrtrair os dados relevantes para criar stickers(IMAGEM hehe), durante o processo de desenvolvivemento foram feitas refatorações no código afim de desacomplar funções e facilitar alterações, como o consumo de novas APIs</br>
 
 -🔨 `Funcionalidade 1`: Consumir e tratar dados de API's;</br>
 -🔨 `Funcionalidade 2`: Gerar Stickers(.png) para compartilhar em aplicativos de mensagem;</br>
