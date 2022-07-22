@@ -1,15 +1,22 @@
 public enum APIsSelector {
 
-    IMDB ("https://alura-imdb-api.herokuapp.com/movies"),
-    NASA ("https://api.mocki.io/v2/549a5d8b/NASA-APOD");
+    IMDB ("https://alura-imdb-api.herokuapp.com/movies",new ExtratorDeConteudoIMDB()),
+    NASA ("https://api.mocki.io/v2/549a5d8b/NASA-APOD",new ExtratorDeConteudoNasa()),
+    LOCAL ("http://localhost:8080/linguagens",new ExtratorDeConteudoLinguagens());
 
     private String url;
+    private ExtratorDeConteudo extrator;
 
-    APIsSelector(String url) {
+    APIsSelector(String url, ExtratorDeConteudo extrator) {
         this.url = url;
+        this.extrator=extrator;
     }
 
     public String getUrl() {
         return url;
+    }
+
+    public ExtratorDeConteudo getExtrator() {
+        return extrator;
     }
 }
