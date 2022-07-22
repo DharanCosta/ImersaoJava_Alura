@@ -7,6 +7,7 @@ Nesse projeto estamos consumindo uma API e tranformaremos os dados.</br>
 -`Funcionalidade 2`: Gerar Stickers para compartilhar em aplicativos de mensagem;</br>
 
 ## Aula 01
+
 -Na primeira aula acessei os dados da API da IMDb (Top 250 Movies) e aloquei os dados dentro de uma String.</br>
 -Extrai os dados que são relevantes.</br>
 -Exibi e manipulei os dados para que eles aparecessem no terminal de forma organizada e estilizada.</br>
@@ -15,6 +16,7 @@ Nesse projeto estamos consumindo uma API e tranformaremos os dados.</br>
 
 
 ## Aula 02
+
 -Comecei a trabalhar na leitura das imagens dos posters de cada filme, o objetivo é transforma-los em stickers para compartilhar via whatsapp/telegran</br>
 -Consumindo os dados que vieram da API, utilizei lógica para conseguir extrair imagens no tamanho grande dos links recebidos. </br>
 -Com as imagens em um tamanho grande, precisei padronizar os tamanhos. O que facilitou os próximos passos.</br>
@@ -28,15 +30,20 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 )
 
 -Agora com borda no texto.</br>
+
 ![Resultado da Aula 02](https://user-images.githubusercontent.com/41304141/179857515-a16a9661-2a94-4d82-a559-eccdfcba24fb.jpg)
 
 ## Aula 03
+
 -Começei um processo de refatoração do código para facilitar o recebimento novas APIs, dessa maneira também acessei a API da Nasa que mostra as fotos do dia</br>
 -Criei a classe ClienteHttp para separa a gestão das urls das APIs.</br>
 -Criei o extrator de conteúdos para receber o JSON das APIs e fazer o tratamento específico para extrair os dados.</br>
+
 ![Aula03jpg](https://user-images.githubusercontent.com/41304141/180103992-73145793-5212-4323-8726-1e7facc67507.jpg)
+
 -Criei também uma classe Record para padronizar os conteúdos.
 -Adicionei um Enum para gerenciar as URLs dos APIs.</br>
+
 ![Aula03Enunjpg](https://user-images.githubusercontent.com/41304141/180104008-70686282-3d55-4f8b-b7f1-2726893e18f9.jpg)
 
 <h2 align="center">Exemplo dos sticker no Whatsapp</h2>
@@ -46,19 +53,24 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 ![StickerWhatsappExample](https://user-images.githubusercontent.com/41304141/180104578-0266c8c3-01cd-452d-9ce3-cfc483f05e92.jpg)
 
 ## Aula 04 
+
 - Criei a minha própria API (https://github.com/DharanCosta/API_Programing_Languages)</br>
+
 <h3>Detalhes sobre essa API:</h3>
--Projeto Spring utilizando o MongoDB para guardar uma lista de linguagens de programação.</br>
--Fiz um CRUD completo desta API, incluindo um endpoint que ordena por rank de linguagens preferidas.</br>
+
+-Projeto Spring utilizando o MongoDB para guardar uma lista de linguagens de programação.
+
+-Fiz um CRUD completo desta API, incluindo um endpoint que ordena por rank de linguagens preferidas.
 
 ![CRUD](https://user-images.githubusercontent.com/41304141/180464673-204a2daa-a92d-4a31-addc-5cd3b35e11e1.jpg)
 
--Retorna um JSON para ser consumido no Gerador de Stickers(imagem abaixo).</br>
+-Retorna um JSON para ser consumido no Gerador de Stickers(imagem abaixo).
 
 ![jsonAPIlinguagensjpg](https://user-images.githubusercontent.com/41304141/180462837-37cec6f0-3dc9-4d82-b204-21dc0b958d9d.jpg)
-</br>
--Acrescentei no projeto o GSON parser para facilitar a extração de dados de diferentes APIs.</br>
--Inclui no Gerador de Sticker um extartor específico para Linguagens.</br>
+
+-Acrescentei no projeto o GSON parser para facilitar a extração de dados de diferentes APIs.
+
+-Inclui no Gerador de Sticker um extartor específico para Linguagens.
 
 <h2 align="center">Exemplo dos sticker no Whatsapp</h2>
 
