@@ -45,8 +45,24 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 
 ![StickerWhatsappExample](https://user-images.githubusercontent.com/41304141/180104578-0266c8c3-01cd-452d-9ce3-cfc483f05e92.jpg)
 
+## Aula 04 
+- Criei a minha própria API (https://github.com/DharanCosta/API_Programing_Languages)</br>
+<h3>Detalhes sobre essa API:</h3>
+-Projeto Spring utilizando o MongoDB para guardar uma lista de linguagens de programação.</br>
+-Fiz um CRUD completo desta API, incluindo um endpoint que ordena por rank de linguagens preferidas.</br>
 
+![CRUD](https://user-images.githubusercontent.com/41304141/180464673-204a2daa-a92d-4a31-addc-5cd3b35e11e1.jpg)
 
+-Retorna um JSON para ser consumido no Gerador de Stickers(imagem abaixo).</br>
+
+![jsonAPIlinguagensjpg](https://user-images.githubusercontent.com/41304141/180462837-37cec6f0-3dc9-4d82-b204-21dc0b958d9d.jpg)
+</br>
+-Acrescentei no projeto o GSON parser para facilitar a extração de dados de diferentes APIs.</br>
+-Inclui no Gerador de Sticker um extartor específico para Linguagens.</br>
+
+<h2 align="center">Exemplo dos sticker no Whatsapp</h2>
+
+![StickersLinguagesn](https://user-images.githubusercontent.com/41304141/180466420-d78e27cc-b354-4de5-9943-284a88e7fe69.jpg)
 
 
 
