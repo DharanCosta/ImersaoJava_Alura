@@ -13,19 +13,22 @@ import java.net.URL;
 
 public class GeradorDeStickers {
 
-    public void create(InputStream inputStream, String nomeArquivo, Float rating, String date) throws Exception{
+    public void create(InputStream inputStream, String nomeArquivo, Float rating, String date, String minhaAPI) throws Exception{
 
         // Leitura da imagem
-
 //        InputStream inputStream = new FileInputStream(new File("Assets/filme.jpg"));
 //        InputStream inputStream = new URL("https://m.media-amazon.com/images/M/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@.jpg");
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         // Padronizar o tamanho
-        if(imagemOriginal.getWidth()<imagemOriginal.getHeight()) {
-            imagemOriginal = resizeImage(imagemOriginal, 750, 1200);
-        }else{
-            imagemOriginal = resizeImage(imagemOriginal, 1200, 750);
+        if(minhaAPI != "LOCAL"){
+            if(imagemOriginal.getWidth() == imagemOriginal.getHeight()){
+                imagemOriginal = resizeImage(imagemOriginal,500,500);
+            }else if(imagemOriginal.getWidth()<imagemOriginal.getHeight()) {
+                imagemOriginal = resizeImage(imagemOriginal, 750, 1200);
+            }else{
+                imagemOriginal = resizeImage(imagemOriginal, 1200, 750);
+            }
         }
         // Cria nova imagem em memória com transparência e com tamanho novo
 
@@ -42,10 +45,19 @@ public class GeradorDeStickers {
 
         // Configurar a fonte
         Font fonte = new Font("Impact", Font.ITALIC, 86);
-        Font shadow = new Font("Impact", Font.ITALIC, 92);
 
         // Escrever uma frase na nova imagem
-        if(rating.equals(0F)){
+        if(minhaAPI == "LOCAL"){
+            Font fontLocal = new Font("Impact",Font.ITALIC,45);
+            graphics.setFont(fontLocal);
+            graphics.setColor(Color.WHITE);
+            graphics.setFont(fontLocal);
+            if(rating==1){
+                graphics.drawString("MEU FAV", 50, newHeight - 150);
+            }else {
+                graphics.drawString("RANK: " + rating, 50, newHeight - 150);
+            }
+        }else if(minhaAPI == "NASA"){
             graphics.setFont(fonte);
             graphics.setColor(Color.WHITE);
             graphics.setFont(fonte);
@@ -68,7 +80,7 @@ public class GeradorDeStickers {
             graphics.setColor(Color.BLUE.darker().darker());
             graphics.draw(outline);
             graphics.setClip(outline);
-        }else{
+        }else if(minhaAPI == "IMDB"){
             if(rating>9) {
                 graphics.setFont(fonte);
                 graphics.setColor(Color.GREEN.darker());
@@ -116,8 +128,8 @@ public class GeradorDeStickers {
                 graphics.draw(outline);
                 graphics.setClip(outline);
             }
-
         }
+
         // Escrever a nova imagem em um arquivo
         File sticker = new File("output/"+nomeArquivo);
         if(sticker.mkdir())

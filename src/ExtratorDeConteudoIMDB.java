@@ -18,7 +18,8 @@ public class ExtratorDeConteudoIMDB implements ExtratorDeConteudo {
 
             String urlImg= atributos.get("image")
                     .replaceAll("(@+)(.*).jpg$", "$1.jpg");
-            float rating = Float.parseFloat(atributos.get("imDbRating"));            String date = null;
+            float rating = Float.parseFloat(atributos.get("imDbRating"));
+            String date = null;
 
             var conteudo = new Conteudo(titulo,urlImg,rating,date);
 
