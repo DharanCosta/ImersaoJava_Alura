@@ -64,5 +64,10 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 
 ![StickersLinguagesn](https://user-images.githubusercontent.com/41304141/180466420-d78e27cc-b354-4de5-9943-284a88e7fe69.jpg)
 
+## Aula 05
+- Testando todos os endpoints da API-Linguagens. </br>
+- Preparei o projeto para deploy.</br>
+- Deploy realizado com sucesso (http://api-linguagens-alura.herokuapp.com/linguagens/ranking).</br>
+
 
 
