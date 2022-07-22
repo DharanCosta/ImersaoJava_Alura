@@ -1,7 +1,11 @@
+![ImersaoJava](https://user-images.githubusercontent.com/41304141/180502973-63a87ed9-fb0b-4e77-a70b-b7543e41025a.jpg)
+
 <h1 align="center">Imersão Java - Alura</h1>
+<h2 align="center">Gerador de Stickers</h2>
 
 <h3> Descrição do projeto </h3>
-Nesse projeto estamos consumindo uma API e tranformaremos os dados.</br>
+
+O projeto consiste em consumir diferente APIs e exrtrair os dados relevantes para criar stickers, durante o processo de desenvolvivemento foram feitas refatorações no código afim de desacomplar funções e facilitar alterações para consumo de diferentes APIs</br>
 
 -🔨 `Funcionalidade 1`: Consumir e tratar dados de API's;</br>
 -🔨 `Funcionalidade 2`: Gerar Stickers(.png) para compartilhar em aplicativos de mensagem;</br>
@@ -57,9 +61,13 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 
 <h2 align="center">Exemplo dos sticker no Whatsapp</h2>
 
-![StickerWhatsappExample2](https://user-images.githubusercontent.com/41304141/180104893-7dbd4fc8-a647-4ddb-b51e-0c9b4259e40f.jpg)
+<div align="center">
+ 
+ ![StickerWhatsappExample2](https://user-images.githubusercontent.com/41304141/180104893-7dbd4fc8-a647-4ddb-b51e-0c9b4259e40f.jpg)
 
-![StickerWhatsappExample](https://user-images.githubusercontent.com/41304141/180104578-0266c8c3-01cd-452d-9ce3-cfc483f05e92.jpg)
+ ![StickerWhatsappExample](https://user-images.githubusercontent.com/41304141/180104578-0266c8c3-01cd-452d-9ce3-cfc483f05e92.jpg)
+ 
+</div>
 
 ## Aula 04 
 
@@ -83,8 +91,12 @@ Obs. Como os dados são dos top 250 mais bem rankeados, coloquei uma nota de cor
 
 <h2 align="center">Exemplo dos sticker no Whatsapp</h2>
 
+<div align="center">
+
 ![StickersLinguagesn](https://user-images.githubusercontent.com/41304141/180466420-d78e27cc-b354-4de5-9943-284a88e7fe69.jpg)
 
+ </div>
+ 
 ## Aula 05
 - Testando todos os endpoints da API-Linguagens. </br>
 - Preparei o projeto para deploy.</br>
