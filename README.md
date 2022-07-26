@@ -22,6 +22,10 @@ O projeto consiste em consumir APIs e exrtrair os dados relevantes para criar st
 
 https://github.com/DharanCosta/API_Programing_Languages
 
+## 🏅 Reconhecimento time Alura
+
+https://www.alura.com.br/imersao-java/projetos
+
 
 ## Aula 01
 
